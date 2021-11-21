@@ -15,14 +15,14 @@ def home():
 
 @app.route('/prediction', methods=['POST'])
 def prediction():
-    monthly_balance = request.form['monthly balance']
-    total_income = request.form['total income']
-    gender = request.form['gender']
-    housing_type = request.form['housing type']
-    family_status = request.form['family status']
-    family_members = request.form['family members']
-    own_car = request.form['own car']
-    income_type = request.form['income type']
+    monthly_balance = int(request.form['monthly balance'])
+    total_income = int(request.form['total income'])
+    gender = int(request.form['gender'])
+    housing_type = int(request.form['housing type'])
+    family_status = int(request.form['family status'])
+    family_members = int(request.form['family members'])
+    own_car = int(request.form['own car'])
+    income_type = int(request.form['income type'])
 
 #     Index(['MONTHS_BALANCE', 'CODE_GENDER', 'NAME_HOUSING_TYPE',
 #        'NAME_FAMILY_STATUS', 'CNT_FAM_MEMBERS', 'NAME_INCOME_TYPE',
