@@ -24,9 +24,12 @@ def prediction():
     own_car = request.form['own car']
     income_type = request.form['income type']
 
-    #prediction = loadedModel.predict([[monthly_balance, gender, housing_type, family_status, family_members, income_type, own_car, total_income]])[0]
+#     Index(['MONTHS_BALANCE', 'CODE_GENDER', 'NAME_HOUSING_TYPE',
+#        'NAME_FAMILY_STATUS', 'CNT_FAM_MEMBERS', 'NAME_INCOME_TYPE',
+#        'FLAG_OWN_CAR', 'AMT_INCOME_TOTAL'],
+#       dtype='object')
 
-    testArr = np.array([[2000, 2, 0, 1, 3, 3, 0, 50000]])
+    testArr = np.array([[monthly_balance, gender, housing_type, family_status, family_members, income_type, own_car, total_income]])
     testCol = loadedModel.get_booster().feature_names
     testDf = pd.DataFrame(data=testArr, columns=testCol)
 
